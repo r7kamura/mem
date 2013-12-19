@@ -20,7 +20,7 @@ class Foo
   end
 
   # `memoize` defines bar_with_memoize & bar_without_memoize,
-  # and the result of 1st method call is stored into @bar.
+  # and the result of the 1st method call is stored into @bar.
   memoize :bar
 
   private
