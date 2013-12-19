@@ -1,5 +1,4 @@
 require "mem/version"
-require "active_support/core_ext/module/aliasing"
 
 module Mem
   def memoize(method_name)
