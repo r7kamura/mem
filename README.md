@@ -1,29 +1,37 @@
 # Mem
-
-TODO: Write a gem description
+Memoize any method call.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'mem'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install mem
+```
+gem install mem
+```
 
 ## Usage
+```
+class Foo
+  extend Mem
 
-TODO: Write usage instructions here
+  def initialize
+    @count = 0
+  end
 
-## Contributing
+  def bar
+    baz
+  end
 
-1. Fork it ( http://github.com/<my-github-username>/mem/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+  # `memoize` defines bar_with_memoize & bar_without_memoize,
+  # and the result of 1st method call is stored into @bar.
+  memoize :bar
+
+  private
+
+  def baz
+    @count += 1
+  end
+end
+
+foo = Foo.new
+foo.bar #=> 1
+foo.bar #=> 1
+foo.bar #=> 1
+```
