@@ -7,7 +7,7 @@ gem install mem
 ```
 
 ## Usage
-```
+```ruby
 class Foo
   extend Mem
 
