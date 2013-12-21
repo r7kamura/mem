@@ -24,6 +24,7 @@ describe Mem do
     it "memoizes the result of specified method call" do
       expect(object).to receive(:bar).once.and_call_original
       expect(object.foo { "foo" }).to eq "foo"
+      expect(object.foo { "baz" }).to eq "foo"
     end
   end
 end
