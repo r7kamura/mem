@@ -1,0 +1,10 @@
+## 0.1.0
+* Change interface from `extend Mem` to `include Mem`
+* Change stored data structure from ivar to hash table
+* Add some instance methods to inspect memoized table
+
+## 0.0.2
+* Remove dependency on ActiveSupport
+
+## 0.0.1
+* 1st release
