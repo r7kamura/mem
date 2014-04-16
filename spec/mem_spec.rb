@@ -29,7 +29,7 @@ describe Mem do
       end
     end
 
-    context "with normal method name" do
+    context "with abnormal method name" do
       let(:klass) do
         Class.new do
           include Mem
