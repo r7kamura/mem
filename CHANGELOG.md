@@ -1,3 +1,6 @@
+## 0.1.1
+* Define setter on `.memoize`
+
 ## 0.1.0
 * Change interface from `extend Mem` to `include Mem`
 * Change stored data structure from ivar to hash table
