@@ -32,6 +32,10 @@ module Mem
       end
       alias_method "#{method_name}_without_memoize", method_name
       alias_method method_name, "#{method_name}_with_memoize"
+
+      define_method("#{method_name}=") do |value|
+        memoize(method_name, value)
+      end
     end
   end
 end

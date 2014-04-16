@@ -19,6 +19,11 @@ describe Mem do
           def b(value)
             [value, yield]
           end
+
+          def c
+            "c"
+          end
+          memoize :c
         end
       end
 
@@ -26,6 +31,12 @@ describe Mem do
         expect(object).to receive(:b).once.and_call_original
         expect(object.a(1) { 2 }).to eq [1, 2]
         expect(object.a(3) { 4 }).to eq [1, 2]
+      end
+
+      it "defines setter" do
+        expect(object.c).to eq "c"
+        object.c = "d"
+        expect(object.c).to eq "d"
       end
     end
 
