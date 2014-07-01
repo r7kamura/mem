@@ -1,3 +1,6 @@
+## 0.1.2
+* Add memoize/core_ext
+
 ## 0.1.1
 * Define setter on `.memoize`
 

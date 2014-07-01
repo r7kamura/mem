@@ -38,3 +38,7 @@ foo.has_memoized?(:bar) #=> true
 foo.memoized(:bar) #=> 1
 foo.memoized_table #=> { bar: 1 }
 ```
+
+### core ext
+If that makes you feel better, you can `require "mem/core_ext"` to avoid `include Mem`,
+while this extends Object class.

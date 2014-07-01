@@ -1,0 +1,1 @@
+Object.send(:include, Mem)
