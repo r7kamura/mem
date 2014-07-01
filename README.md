@@ -40,5 +40,21 @@ foo.memoized_table #=> { bar: 1 }
 ```
 
 ### core ext
-If that makes you feel better, you can `require "mem/core_ext"` to avoid `include Mem`,
+You can `require "mem/core_ext"` to skip `include Mem`,
 while this extends Object class.
+
+```ruby
+require "mem/core_ext"
+
+class A
+  def x
+    puts 1
+  end
+  memoize :x
+end
+
+a = A.new
+a.x #=> 1
+a.x #=> nothing logged out
+a.x #=> nothing logged out
+```
