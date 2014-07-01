@@ -1,3 +1,6 @@
+## 0.1.3
+* Support memoize/core_ext only use
+
 ## 0.1.2
 * Add memoize/core_ext
 
