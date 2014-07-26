@@ -21,6 +21,10 @@ module Mem
     @memoized_table ||= {}
   end
 
+  def unmemoize(key)
+    memoized_table.delete(key)
+  end
+
   module ClassMethods
     def memoize(method_name)
       define_method("#{method_name}_with_memoize") do |*args, &block|
@@ -32,6 +36,10 @@ module Mem
       end
       alias_method "#{method_name}_without_memoize", method_name
       alias_method method_name, "#{method_name}_with_memoize"
+
+      define_method("unmemoize_#{method_name}") do
+        unmemoize(method_name)
+      end
 
       define_method("#{method_name}=") do |value|
         memoize(method_name, value)
