@@ -1,3 +1,6 @@
+## 0.1.4
+* Add support for removing memoization
+
 ## 0.1.3
 * Support memoize/core_ext only use
 
