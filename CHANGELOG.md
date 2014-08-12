@@ -1,3 +1,6 @@
+## 0.1.5
+* Fix method visibility
+
 ## 0.1.4
 * Add support for removing memoization
 
