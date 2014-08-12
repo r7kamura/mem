@@ -65,5 +65,41 @@ describe Mem do
         object.memoized_table.should == { a!: [1, 2] }
       end
     end
+
+    context "with non-public method name" do
+      let(:klass) do
+        Class.new do
+          include Mem
+
+          def a
+          end
+          memoize :a
+
+          protected
+
+          def b
+          end
+          memoize :b
+
+          private
+
+          def c
+          end
+          memoize :c
+        end
+      end
+
+      it 'keeps method visibilities' do
+        expect(klass.public_instance_methods).to include(:a)
+        expect(klass.protected_instance_methods).to include(:b)
+        expect(klass.private_instance_methods).to include(:c)
+      end
+
+      it 'does not define setter of private method' do
+        expect(klass.instance_methods).to include(:a=)
+        expect(klass.instance_methods).to include(:b=)
+        expect(klass.instance_methods).not_to include(:c=)
+      end
+    end
   end
 end
