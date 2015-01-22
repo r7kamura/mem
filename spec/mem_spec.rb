@@ -61,7 +61,7 @@ describe Mem do
         expect(object.a!(1) { 2 }).to eq [1, 2]
         expect(object.a!(3) { 4 }).to eq [1, 2]
         object.should have_memoized(:a!)
-        object.memoized(:a!).should == [1, 2]
+        expect(object.memoized(:a!)).to eq [1, 2]
         object.memoized_table.should == { a!: [1, 2] }
       end
     end
