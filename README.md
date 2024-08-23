@@ -1,7 +1,17 @@
 # Mem
+
 Memoize any method call.
 
 ## Installation
+
+Install the gem and add to the application's Gemfile by executing:
+
+```
+bundle add mem
+```
+
+If bundler is not being used to manage dependencies, install the gem by executing:
+
 ```
 gem install mem
 ```
