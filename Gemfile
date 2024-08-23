@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in mem.gemspec
 gemspec
+
+gem 'bundler'
+gem 'rake'
+gem 'rspec', '2.14.1'
