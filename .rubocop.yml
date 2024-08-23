@@ -10,9 +10,6 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 2.7
 
-Gemspec/RequiredRubyVersion:
-  Enabled: false
-
 Metrics:
   Enabled: false
 
