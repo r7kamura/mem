@@ -4,4 +4,4 @@ gemspec
 
 gem 'bundler'
 gem 'rake'
-gem 'rspec', '2.14.1'
+gem 'rspec'
