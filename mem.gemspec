@@ -14,10 +14,14 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/r7kamura/mem'
   spec.license       = 'MIT'
 
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = spec.homepage
+  spec.metadata['changelog_uri'] = "#{spec.homepage}/releases"
+  spec.metadata['rubygems_mfa_required'] = 'true'
+
   spec.required_ruby_version = '>= 2.7'
 
   spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
-  spec.metadata['rubygems_mfa_required'] = 'true'
 end
