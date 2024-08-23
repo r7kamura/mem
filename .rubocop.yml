@@ -1,0 +1,31 @@
+require:
+  - rubocop-rake
+  - rubocop-rspec
+
+inherit_mode:
+  merge:
+    - Exclude
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.7
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+Naming/PredicateName:
+  ForbiddenPrefixes:
+    - have_
+    - is_
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false

@@ -1,18 +1,21 @@
-lib = File.expand_path("../lib", __FILE__)
+# frozen_string_literal: true
+
+require 'English'
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "mem/version"
+require 'mem/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "mem"
+  spec.name          = 'mem'
   spec.version       = Mem::VERSION
-  spec.authors       = ["Ryo Nakamura"]
-  spec.email         = ["r7kamura@gmail.com"]
-  spec.summary       = "Memoize any method call"
-  spec.homepage      = "https://github.com/r7kamura/mem"
-  spec.license       = "MIT"
+  spec.authors       = ['Ryo Nakamura']
+  spec.email         = ['r7kamura@gmail.com']
+  spec.summary       = 'Memoize any method call'
+  spec.homepage      = 'https://github.com/r7kamura/mem'
+  spec.license       = 'MIT'
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end
