@@ -1,3 +1,5 @@
+name: github-label-sync
+
 on:
   push:
     branches:
