@@ -1,4 +1,6 @@
-require "mem/version"
+# frozen_string_literal: true
+
+require 'mem/version'
 
 module Mem
   def self.included(base)
@@ -28,10 +30,9 @@ module Mem
   module ClassMethods
     def memoize(method_name)
       original_visibility =
-        case
-        when protected_instance_methods.include?(method_name)
+        if protected_instance_methods.include?(method_name)
           :protected
-        when private_instance_methods.include?(method_name)
+        elsif private_instance_methods.include?(method_name)
           :private
         else
           :public
@@ -54,12 +55,12 @@ module Mem
       end
       send(original_visibility, "unmemoize_#{method_name}")
 
-      if original_visibility != :private
-        define_method("#{method_name}=") do |value|
-          memoize(method_name, value)
-        end
-        send(original_visibility, "#{method_name}=")
+      return unless original_visibility != :private
+
+      define_method("#{method_name}=") do |value|
+        memoize(method_name, value)
       end
+      send(original_visibility, "#{method_name}=")
     end
   end
 end

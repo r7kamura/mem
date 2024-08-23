@@ -1,3 +1,5 @@
-require "mem"
+# frozen_string_literal: true
 
-Object.send(:include, Mem)
+require 'mem'
+
+Object.include Mem
