@@ -1,5 +1,7 @@
 # Mem
 
+[![CI](https://github.com/r7kamura/mem/actions/workflows/ci.yml/badge.svg)](https://github.com/r7kamura/mem/actions/workflows/ci.yml)
+
 Memoize any method call.
 
 ## Installation
