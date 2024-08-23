@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.version       = Mem::VERSION
   spec.authors       = ['Ryo Nakamura']
   spec.email         = ['r7kamura@gmail.com']
-  spec.summary       = 'Memoize any method call'
+  spec.summary       = 'Memoize method calls.'
   spec.homepage      = 'https://github.com/r7kamura/mem'
   spec.license       = 'MIT'
 
