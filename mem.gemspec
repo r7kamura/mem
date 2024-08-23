@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-require 'English'
-lib = File.expand_path('lib', __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'mem/version'
+require_relative 'lib/mem/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'mem'
