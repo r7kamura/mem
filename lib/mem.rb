@@ -30,9 +30,9 @@ module Mem
   module ClassMethods
     def memoize(method_name)
       original_visibility =
-        if protected_instance_methods.include?(method_name)
+        if protected_method_defined?(method_name)
           :protected
-        elsif private_instance_methods.include?(method_name)
+        elsif private_method_defined?(method_name)
           :private
         else
           :public
